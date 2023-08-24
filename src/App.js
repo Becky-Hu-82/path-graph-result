@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ImageViewer } from 'jeri';
-import './App.css';
+// import './App.css';
 
 const configForImage = (imageName, spp, isHomogeneous) => {
   const gs = [0, 0.5, 0.9];
