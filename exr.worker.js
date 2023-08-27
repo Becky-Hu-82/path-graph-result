@@ -123,10 +123,10 @@
       });
   },
   function (e, t, n) {
-    e.exports = n.p + 'becky-hu-82.github.io/path-graph-result/exr-wrap.js';
+    e.exports = n.p + '/exr-wrap.js';
   },
   function (e, t, n) {
-    e.exports = n.p + 'becky-hu-82.github.io/path-graph-result/exr-wrap.wasm';
+    e.exports = n.p + '/exr-wrap.wasm';
   },
 ]);
 //# sourceMappingURL=exr.worker.js.map
