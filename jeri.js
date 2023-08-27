@@ -4285,7 +4285,7 @@
     },
     function (t, e, n) {
       t.exports = function () {
-        return new Worker('./exr.worker.js');
+        return new Worker(n.p + '/exr.worker.js');
       };
     },
     function (t, e, n) {
