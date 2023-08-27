@@ -123,10 +123,10 @@
       });
   },
   function (e, t, n) {
-    e.exports = '/exr-wrap.js';
+    e.exports = './exr-wrap.js';
   },
   function (e, t, n) {
-    e.exports = '/exr-wrap.wasm';
+    e.exports = './exr-wrap.wasm';
   },
 ]);
 //# sourceMappingURL=exr.worker.js.map
