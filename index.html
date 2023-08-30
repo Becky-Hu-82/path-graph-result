@@ -21,7 +21,6 @@
   </head>
   <body>
     <div id="root" class="stretch"></div>
-    <div>test</div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.8.6/umd/react.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.6/umd/react-dom.development.js"></script>
@@ -35,41 +34,432 @@
             title: 'sphere',
             children: [
               {
-                title: 'PT',
-                image: 'images/sphere/PT_g=0_10spp.exr',
+                title: 'g=0',
+                children: [
+                  {
+                    title: 'PT',
+                    image: 'images/sphere/sphere_PT_g=0_700spp.exr',
+                  },
+                  {
+                    title: 'PG with distance to surface',
+                    image: 'images/sphere/sphere_PGv3_g=0_700spp.exr',
+                  },
+                  {
+                    title: 'Reference',
+                    image: 'images/sphere/ref_g=0.exr',
+                  },
+                  {
+                    title: 'PT MSE',
+                    tonemapGroup: 'other',
+                    lossMap: {
+                      function: 'MRSE',
+                      imageA: 'images/sphere/sphere_PT_g=0_700spp.exr',
+                      imageB: 'images/sphere/ref_g=0.exr',
+                    },
+                  },
+                  {
+                    title: 'PG with distance to surface MSE',
+                    tonemapGroup: 'other',
+                    lossMap: {
+                      function: 'MRSE',
+                      imageA: 'images/sphere/sphere_PGv3_g=0_700spp.exr',
+                      imageB: 'images/sphere/ref_g=0.exr',
+                    },
+                  },
+                ],
               },
               {
-                title: 'PG',
-                image: 'images/sphere/PGv3_g=0_10spp.exr',
+                title: 'g=0.5',
+                children: [
+                  {
+                    title: 'PT',
+                    image: 'images/sphere/sphere_PT_g=0.5_700spp.exr',
+                  },
+                  {
+                    title: 'PG with distance to surface',
+                    image: 'images/sphere/sphere_PGv3_g=0.5_700spp.exr',
+                  },
+                  {
+                    title: 'Reference',
+                    image: 'images/sphere/ref_g=0.5.exr',
+                  },
+                  {
+                    title: 'PT MSE',
+                    tonemapGroup: 'other',
+                    lossMap: {
+                      function: 'MRSE',
+                      imageA: 'images/sphere/sphere_PT_g=0.5_700spp.exr',
+                      imageB: 'images/sphere/ref_g=0.5.exr',
+                    },
+                  },
+                  {
+                    title: 'PG with distance to surface MSE',
+                    tonemapGroup: 'other',
+                    lossMap: {
+                      function: 'MRSE',
+                      imageA: 'images/sphere/sphere_PGv3_g=0.5_700spp.exr',
+                      imageB: 'images/sphere/ref_g=0.5.exr',
+                    },
+                  },
+                ],
+              },
+              {
+                title: 'g=0.9',
+                children: [
+                  {
+                    title: 'PT',
+                    image: 'images/sphere/sphere_PT_g=0.9_700spp.exr',
+                  },
+                  {
+                    title: 'PG with distance to surface',
+                    image: 'images/sphere/sphere_PGv3_g=0.9_700spp.exr',
+                  },
+                  {
+                    title: 'Reference',
+                    image: 'images/sphere/ref_g=0.9.exr',
+                  },
+                  {
+                    title: 'PT MSE',
+                    tonemapGroup: 'other',
+                    lossMap: {
+                      function: 'MRSE',
+                      imageA: 'images/sphere/sphere_PT_g=0.9_700spp.exr',
+                      imageB: 'images/sphere/ref_g=0.9.exr',
+                    },
+                  },
+                  {
+                    title: 'PG with distance to surface MSE',
+                    tonemapGroup: 'other',
+                    lossMap: {
+                      function: 'MRSE',
+                      imageA: 'images/sphere/sphere_PGv3_g=0.9_700spp.exr',
+                      imageB: 'images/sphere/ref_g=0.9.exr',
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            title: 'dragon rectangle light',
+            children: [
+              {
+                title: 'PT',
+                image:
+                  'images/dragon_rec_area/dragon_rec_area_PT_g=0_700spp.exr',
+              },
+              {
+                title: 'PG with ln(Tr)',
+                image:
+                  'images/dragon_rec_area/dragon_rec_area_PGv2_g=0_700spp.exr',
+              },
+              {
+                title: 'PG with distance to surface',
+                image:
+                  'images/dragon_rec_area/dragon_rec_area_PGv3_g=0_700spp.exr',
               },
               {
                 title: 'Reference',
-                image: 'images/sphere/ref_g=0.exr',
+                image: 'images/dragon_rec_area/ref_g=0.exr',
               },
               {
-                title: 'MrSE PT',
+                title: 'PT MSE',
                 tonemapGroup: 'other',
                 lossMap: {
                   function: 'MRSE',
-                  imageA: 'images/sphere/PT_g=0_10spp.exr',
-                  imageB: 'images/sphere/ref_g=0.exr',
+                  imageA:
+                    'images/dragon_rec_area/dragon_rec_area_PT_g=0_700spp.exr',
+                  imageB: 'images/dragon_rec_area/ref_g=0.exr',
                 },
               },
               {
-                title: 'MrSE PG',
+                title: 'PG with ln(Tr) MSE',
                 tonemapGroup: 'other',
                 lossMap: {
                   function: 'MRSE',
-                  imageA: 'images/sphere/PGv3_g=0_10spp.exr',
-                  imageB: 'images/sphere/ref_g=0.exr',
+                  imageA:
+                    'images/dragon_rec_area/dragon_rec_area_PGv2_g=0_700spp.exr',
+                  imageB: 'images/dragon_rec_area/ref_g=0.exr',
+                },
+              },
+              {
+                title: 'PG with distance to surface MSE',
+                tonemapGroup: 'other',
+                lossMap: {
+                  function: 'MRSE',
+                  imageA:
+                    'images/dragon_rec_area/dragon_rec_area_PGv3_g=0_700spp.exr',
+                  imageB: 'images/dragon_rec_area/ref_g=0.exr',
                 },
               },
             ],
           },
-          // {
-          //   title: 'Mountains',
-          //   image: 'images/test_image.jpg',
-          // },
+          {
+            title: 'dragon bunny light',
+            children: [
+              {
+                title: 'PT',
+                image:
+                  'images/dragon_bunny_area/dragon_bunny_area_PT_g=0_700spp.exr',
+              },
+              {
+                title: 'PG with ln(Tr)',
+                image:
+                  'images/dragon_bunny_area/dragon_bunny_area_PGv2_g=0_700spp.exr',
+              },
+              {
+                title: 'PG with distance to surface',
+                image:
+                  'images/dragon_bunny_area/dragon_bunny_area_PGv3_g=0_700spp.exr',
+              },
+              {
+                title: 'Reference',
+                image: 'images/dragon_bunny_area/ref_g=0.exr',
+              },
+              {
+                title: 'PT MSE',
+                tonemapGroup: 'other',
+                lossMap: {
+                  function: 'MRSE',
+                  imageA:
+                    'images/dragon_bunny_area/dragon_bunny_area_PT_g=0_700spp.exr',
+                  imageB: 'images/dragon_bunny_area/ref_g=0.exr',
+                },
+              },
+              {
+                title: 'PG with ln(Tr) MSE',
+                tonemapGroup: 'other',
+                lossMap: {
+                  function: 'MRSE',
+                  imageA:
+                    'images/dragon_bunny_area/dragon_bunny_area_PGv2_g=0_700spp.exr',
+                  imageB: 'images/dragon_bunny_area/ref_g=0.exr',
+                },
+              },
+              {
+                title: 'PG with distance to surface MSE',
+                tonemapGroup: 'other',
+                lossMap: {
+                  function: 'MRSE',
+                  imageA:
+                    'images/dragon_bunny_area/dragon_bunny_area_PGv3_g=0_700spp.exr',
+                  imageB: 'images/dragon_bunny_area/ref_g=0.exr',
+                },
+              },
+            ],
+          },
+          {
+            title: 'dragon point light',
+            children: [
+              {
+                title: 'PT',
+                image: 'images/dragon_point/dragon_point_PT_g=0_700spp.exr',
+              },
+              {
+                title: 'PG with ln(Tr)',
+                image: 'images/dragon_point/dragon_point_PGv2_g=0_700spp.exr',
+              },
+              {
+                title: 'PG with distance to surface',
+                image: 'images/dragon_point/dragon_point_PGv3_g=0_700spp.exr',
+              },
+              {
+                title: 'Reference',
+                image: 'images/dragon_point/ref_g=0.exr',
+              },
+              {
+                title: 'PT MSE',
+                tonemapGroup: 'other',
+                lossMap: {
+                  function: 'MRSE',
+                  imageA: 'images/dragon_point/dragon_point_PT_g=0_700spp.exr',
+                  imageB: 'images/dragon_point/ref_g=0.exr',
+                },
+              },
+              {
+                title: 'PG with ln(Tr) MSE',
+                tonemapGroup: 'other',
+                lossMap: {
+                  function: 'MRSE',
+                  imageA:
+                    'images/dragon_point/dragon_point_PGv2_g=0_700spp.exr',
+                  imageB: 'images/dragon_point/ref_g=0.exr',
+                },
+              },
+              {
+                title: 'PG with distance to surface MSE',
+                tonemapGroup: 'other',
+                lossMap: {
+                  function: 'MRSE',
+                  imageA:
+                    'images/dragon_point/dragon_point_PGv3_g=0_700spp.exr',
+                  imageB: 'images/dragon_point/ref_g=0.exr',
+                },
+              },
+            ],
+          },
+          {
+            title: 'dragon with bunny light at back',
+            children: [
+              {
+                title: 'PT',
+                image:
+                  'images/dragon_back_light/dragon_back_light_PT_g=0_700spp.exr',
+              },
+              {
+                title: 'PG with ln(Tr)',
+                image:
+                  'images/dragon_back_light/dragon_back_light_PGv2_g=0_700spp.exr',
+              },
+              {
+                title: 'PG with distance to surface',
+                image:
+                  'images/dragon_back_light/dragon_back_light_PGv3_g=0_700spp.exr',
+              },
+              {
+                title: 'Reference',
+                image: 'images/dragon_back_light/ref_g=0.exr',
+              },
+              {
+                title: 'PT MSE',
+                tonemapGroup: 'other',
+                lossMap: {
+                  function: 'MRSE',
+                  imageA:
+                    'images/dragon_back_light/dragon_back_light_PT_g=0_700spp.exr',
+                  imageB: 'images/dragon_back_light/ref_g=0.exr',
+                },
+              },
+              {
+                title: 'PG with ln(Tr) MSE',
+                tonemapGroup: 'other',
+                lossMap: {
+                  function: 'MRSE',
+                  imageA:
+                    'images/dragon_back_light/dragon_back_light_PGv2_g=0_700spp.exr',
+                  imageB: 'images/dragon_back_light/ref_g=0.exr',
+                },
+              },
+              {
+                title: 'PG with distance to surface MSE',
+                tonemapGroup: 'other',
+                lossMap: {
+                  function: 'MRSE',
+                  imageA:
+                    'images/dragon_back_light/dragon_back_light_PGv3_g=0_700spp.exr',
+                  imageB: 'images/dragon_back_light/ref_g=0.exr',
+                },
+              },
+            ],
+          },
+          {
+            title: 'dragon with bunny light inside',
+            children: [
+              {
+                title: 'PT',
+                image:
+                  'images/dragon_inner_light/dragon_inner_light_PT_g=0_700spp.exr',
+              },
+              {
+                title: 'PG with ln(Tr)',
+                image:
+                  'images/dragon_inner_light/dragon_inner_light_PGv2_g=0_700spp.exr',
+              },
+              {
+                title: 'PG with distance to surface',
+                image:
+                  'images/dragon_inner_light/dragon_inner_light_PGv3_g=0_700spp.exr',
+              },
+              {
+                title: 'Reference',
+                image: 'images/dragon_inner_light/ref_g=0.exr',
+              },
+              {
+                title: 'PT MSE',
+                tonemapGroup: 'other',
+                lossMap: {
+                  function: 'MRSE',
+                  imageA:
+                    'images/dragon_inner_light/dragon_inner_light_PT_g=0_700spp.exr',
+                  imageB: 'images/dragon_inner_light/ref_g=0.exr',
+                },
+              },
+              {
+                title: 'PG with ln(Tr) MSE',
+                tonemapGroup: 'other',
+                lossMap: {
+                  function: 'MRSE',
+                  imageA:
+                    'images/dragon_inner_light/dragon_inner_light_PGv2_g=0_700spp.exr',
+                  imageB: 'images/dragon_inner_light/ref_g=0.exr',
+                },
+              },
+              {
+                title: 'PG with distance to surface MSE',
+                tonemapGroup: 'other',
+                lossMap: {
+                  function: 'MRSE',
+                  imageA:
+                    'images/dragon_inner_light/dragon_inner_light_PGv3_g=0_700spp.exr',
+                  imageB: 'images/dragon_inner_light/ref_g=0.exr',
+                },
+              },
+            ],
+          },
+          {
+            title: 'dragon with two lights (top + inside)',
+            children: [
+              {
+                title: 'PT',
+                image:
+                  'images/dragon_two_lights/dragon_two_lights_PT_g=0_700spp.exr',
+              },
+              {
+                title: 'PG with ln(Tr)',
+                image:
+                  'images/dragon_two_lights/dragon_two_lights_PGv2_g=0_700spp.exr',
+              },
+              {
+                title: 'PG with distance to surface',
+                image:
+                  'images/dragon_two_lights/dragon_two_lights_PGv3_g=0_700spp.exr',
+              },
+              {
+                title: 'Reference',
+                image: 'images/dragon_two_lights/ref_g=0.exr',
+              },
+              {
+                title: 'PT MSE',
+                tonemapGroup: 'other',
+                lossMap: {
+                  function: 'MRSE',
+                  imageA:
+                    'images/dragon_two_lights/dragon_two_lights_PT_g=0_700spp.exr',
+                  imageB: 'images/dragon_two_lights/ref_g=0.exr',
+                },
+              },
+              {
+                title: 'PG with ln(Tr) MSE',
+                tonemapGroup: 'other',
+                lossMap: {
+                  function: 'MRSE',
+                  imageA:
+                    'images/dragon_two_lights/dragon_two_lights_PGv2_g=0_700spp.exr',
+                  imageB: 'images/dragon_two_lights/ref_g=0.exr',
+                },
+              },
+              {
+                title: 'PG with distance to surface MSE',
+                tonemapGroup: 'other',
+                lossMap: {
+                  function: 'MRSE',
+                  imageA:
+                    'images/dragon_two_lights/dragon_two_lights_PGv3_g=0_700spp.exr',
+                  imageB: 'images/dragon_two_lights/ref_g=0.exr',
+                },
+              },
+            ],
+          },
         ],
       };
 
